@@ -20,11 +20,11 @@ const app = express();
 app.use(helmet());
 app.use(express.json());
 
-app.use(cors({
-  origin: "http://localhost:8080",
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-}));
+// app.use(cors({
+//   origin: "http://localhost:8080",
+//   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+//   allowedHeaders: ["Content-Type", "Authorization"],
+// }));
 
 app.use(
 cors({
