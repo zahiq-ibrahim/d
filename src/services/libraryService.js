@@ -36,7 +36,7 @@ async function getLibraryUrl(userId) {
       throw error;
     }
 
-    const url = `${process.env.APP_URL}/library/${userId}`;
+    const url = `https://zahiq-ibrahim-bookshelf-nook-library.book-shelf-api.workers.dev/library/${userId}`;
 
     // const library = await UserLibrary.findOne({
     //   user: userId,
