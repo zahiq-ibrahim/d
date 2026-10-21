@@ -26,6 +26,14 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
+app.use(
+cors({
+origin: "https://zahiq-ibrahim-bookshelf-nook-library.book-shelf-api.workers.dev",
+methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+allowedHeaders: ["Content-Type", "Authorization"],
+})
+);
+
 app.use("/api/v1/health", helloRoutes);
 
 app.use("/api/v1/auth", authRoutes);
