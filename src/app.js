@@ -2,6 +2,10 @@ require("dotenv").config();
 
 const express = require("express");
 const helmet = require("helmet");
+const cors = require("cors");
+
+
+
 
 const { connectDB}  = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
@@ -15,6 +19,12 @@ const app = express();
 
 app.use(helmet());
 app.use(express.json());
+
+app.use(cors({
+  origin: "http://localhost:8080",
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 
 app.use("/api/v1/health", helloRoutes);
 

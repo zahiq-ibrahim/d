@@ -8,7 +8,7 @@ async function getLibrary(userId) {
     user: userId,
   }).populate({
     path: "books",
-    select: "title authors coverColor numberOfPages publishYear openLibraryId",
+    select: "title authors coverColor numberOfPages publishYear openLibraryId coverUrl read caption",
   });
 
   if (!library) {
@@ -32,6 +32,9 @@ async function getLibrary(userId) {
       color: book.coverColor,
       numberOfPages: book.numberOfPages,
       publishYear: book.publishYear,
+      read: book.read,
+      coverUrl: book.coverUrl,
+      caption: book.caption,
     })),
   };
 }
